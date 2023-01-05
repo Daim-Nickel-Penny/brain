@@ -1,0 +1,22 @@
+---
+title: 1) JS Working and Execution
+id: Js-Working-Execution
+slug: /javascript/internals/js-working-execution
+---
+
+import Highlight from "@site/src/components/Highlight/Index.js";
+import { Colors } from "@site/src/components/Colors/Index.js";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+Everything in <Highlight color={Colors.JavaScriptYellow}>JavaScript</Highlight> happens inside the execution context. Imagine a sealed-off container
+inside which <Highlight color={Colors.JavaScriptYellow}>JavaScript</Highlight> runs. It is an abstract concept that holds info about the env. within
+the current code is being executed.
+
+<img src={useBaseUrl("/img/js-w-e.png")} width="600rem" height="200rem" />
+
+- In the container, the first component is the **memory component** and the 2nd one is the **code component**
+- The memory component has all the variables and functions in key-value pairs. It is also called a **Variable environment**.
+- Code component is the place where code is executed one line at a time. It is also called the **Thread of Execution**.
+- JS is a **synchronous**, **single-threaded** language
+  - Synchronous:- One command at a time.
+  - Single-threaded:- In a specific synchronous order.
