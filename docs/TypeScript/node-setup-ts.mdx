@@ -1,0 +1,82 @@
+---
+title: Setup TS project in Node
+id: Node-Setup-Ts
+description: node setup in ts
+slug: /typescript/setup-ts-in-node
+---
+
+import Highlight from "@site/src/components/Highlight/Index.js";
+import { Colors } from "@site/src/components/Colors/Index.js";
+import CoverPicture from "@site/src/components/CoverPicture/Index.js";
+
+<CoverPicture
+  imgSrc="https://miro.medium.com/max/900/0*foMyEI_p9itich5y.png"
+  alt="Setup TS in node"
+/>
+
+## Basic Setup
+
+To set up a <Highlight color={Colors.TypeScriptBlue}>TypeScript</Highlight> project in Node.js using the TypeScript compiler (tsc), follow these steps:
+
+1. Install the TypeScript compiler by running `npm install -g typescript` . This will install the TypeScript compiler globally on your system, allowing you to run it from the command line.
+
+2. Create a new directory for your project and navigate to it.
+
+3. Run `tsc --init` to create a **tsconfig.json** file in your project directory. This file is used to configure the TypeScript compiler and specify the options for your project.
+
+4. Open the **tsconfig.json** file in a text editor and set the "outDir" option to specify the directory where you want the compiled JavaScript files to be placed. For example:
+
+   ```js
+   {
+   "compilerOptions": {
+       "outDir": "./build"
+   }
+   }
+   ```
+
+5. Create a src directory in your project and add a TypeScript file to it. For example, you might create a file called src/index.ts with the following contents:
+
+   ```js
+   function greet(name: string) {
+     console.log(`Hello, ${name}!`);
+   }
+
+   greet("World");
+   ```
+
+6. Run tsc to compile your TypeScript code. This will generate a JavaScript file in the build directory with the same name as your TypeScript file, in this case **build/index.js**.
+
+7. Run **node build/index.js** to execute the compiled JavaScript file. This should print "Hello, World!" to the console.
+
+   That's it! You've set up a TypeScript project in Node.js using the tsc compiler.
+
+## Nodemon to Automatically Update
+
+To add nodemon to a <Highlight color={Colors.TypeScriptBlue}>TypeScript</Highlight> project, you will need to install it as a development dependency:
+
+1. Run `npm install --save-dev nodemon` to install nodemon and add it to the devDependencies section of your project's **package.json** file.
+
+2. Create a script in the **package.json** file that runs nodemon with the TypeScript compiler. For example:
+
+   ```js
+   {
+   "scripts": {
+       "start": "nodemon -e ts --exec 'tsc && node'"
+   }
+   }
+   ```
+
+   :::info
+   This script tells nodemon to watch for changes to TypeScript (.ts) files and, when a change is detected, to run the TypeScript compiler (tsc) and then execute the compiled JavaScript file with node.
+   :::
+
+3. To start the project with nodemon, run npm start. This will start the TypeScript compiler in watch mode and nodemon will automatically restart the app when it detects a change to your TypeScript files.
+   :::tip
+   **Note**: If you want to specify the entry point for your app, you can modify the script to include the path to your main TypeScript file. For example:
+   :::
+
+   ```js
+   "start": "nodemon -e ts --exec 'tsc -p src && node src/index.js'"
+   ```
+
+   This script tells nodemon to run the TypeScript compiler with the -p src option to specify the src directory as the root of the TypeScript project, and to execute the compiled JavaScript file at src/index.js with node.

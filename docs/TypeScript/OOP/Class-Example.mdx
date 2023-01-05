@@ -1,0 +1,157 @@
+---
+title: Class Example
+id: Class-Example
+description: Class based examples in TS
+slug: /typescript/oop-in-ts/class-based-example
+---
+
+import Highlight from "@site/src/components/Highlight/Index.js";
+import { Colors } from "@site/src/components/Colors/Index.js";
+
+## Calculator Class
+
+Here is an example of a class in <Highlight color={Colors.TypeScriptBlue}>Typescript</Highlight> that implements a simple calculator with an **add method** and a **subtract method**, as well as **getters** and **setters** for the `x` and `y` properties:
+
+```ts
+class Calculator {
+  private _x: number;
+  private _y: number;
+
+  constructor(x: number, y: number) {
+    this._x = x;
+    this._y = y;
+  }
+
+  get x(): number {
+    return this._x;
+  }
+
+  set x(value: number) {
+    this._x = value;
+  }
+
+  get y(): number {
+    return this._y;
+  }
+
+  set y(value: number) {
+    this._y = value;
+  }
+
+  add(): number {
+    return this._x + this._y;
+  }
+
+  subtract(): number {
+    return this._x - this._y;
+  }
+}
+```
+
+To use this class, you can create an _instance_ of Calculator and call the add and subtract methods on it:
+
+```ts
+const calculator = new Calculator(2, 3);
+console.log(calculator.add()); // Output: 5
+console.log(calculator.subtract()); // Output: -1
+```
+
+You can also use the getters and setters to access and modify the x and y properties:
+
+```ts
+console.log(calculator.x); // Output: 2
+calculator.x = 4;
+console.log(calculator.x); // Output: 4
+```
+
+## Async Methods in Class
+
+In this example, the `myAsyncFunc` method is an async function that returns a promise that resolves to a string after a 1 second delay. The `myAsyncMethod` method can be called on an instance of MyClass and the result can be accessed using the then method of the returned promise.
+
+```ts
+class MyClass {
+  async myAsyncFunc(): Promise<string> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve("Hello, World!");
+      }, 1000);
+    });
+  }
+}
+
+const myClass = new MyClass();
+myClass.myAsyncFunc().then((result) => {
+  console.log(result); // Output: 'Hello, World!'
+});
+```
+
+## Static and Final Variable
+
+In this example, the **static** variable myStaticVar is a class-level variable that can be accessed using the class name (MyClass.myStaticVar). The **final** variable myFinalVar is an instance-level variable that is set in the constructor and can be accessed using an instance of the class (myClass.myFinalVar). The readonly modifier makes it so that the value of myFinalVar cannot be changed after it is set in the constructor.
+
+The `myAsyncMethod` is an async method that returns a promise that resolves to a string after a 1 second delay. It can be called on an instance of MyClass and the result can be accessed using the then method of the returned promise.
+
+```ts
+class MyClass {
+  static myStaticVar = "foo";
+  readonly myFinalVar: string;
+
+  constructor(finalVar: string) {
+    this.myFinalVar = finalVar;
+  }
+
+  async myAsyncMethod(): Promise<string> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve("Hello, World!");
+      }, 1000);
+    });
+  }
+}
+```
+
+Here is how you can use this class:
+
+```ts
+// Access the static variable
+console.log(MyClass.myStaticVar); // Output: 'foo'
+
+// Create an instance of MyClass
+const myClass = new MyClass("bar");
+
+// Access the final variable
+console.log(myClass.myFinalVar); // Output: 'bar'
+
+// Call the async method
+myClass.myAsyncMethod().then((result) => {
+  console.log(result); // Output: 'Hello, World!'
+});
+```
+
+## ReadOnly Variable
+
+In <Highlight color={Colors.TypeScriptBlue}>Typescript</Highlight> , the **readonly modifier** is used to specify that a class property or method parameter is read-only. This means that the value of the property or parameter can be read, but it cannot be modified
+
+### Example
+
+In this example, the `myVar` property of the _MyClass_ class is a read-only property that is set in the constructor and can be read using `myClass.myVar`. The readonlyParam parameter of the myMethod method is also read-only and can only be accessed within the method.
+
+The `readonly` modifier can be used with class properties and method parameters to make them _read-only_. It is often used to prevent accidental or unintended modifications to the value of a property or parameter.
+
+```ts
+class MyClass {
+  readonly myVar: number;
+
+  constructor(myVar: number) {
+    this.myVar = myVar;
+  }
+
+  myMethod(readonlyParam: string): void {
+    console.log(readonlyParam);
+  }
+}
+
+const myClass = new MyClass(10);
+console.log(myClass.myVar); // Output: 10
+myClass.myMethod("Hello, World!"); // Output: 'Hello, World!'
+```
