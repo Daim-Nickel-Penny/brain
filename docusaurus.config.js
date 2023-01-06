@@ -55,13 +55,14 @@ const config = {
             type: "doc",
             docId: "intro",
             position: "left",
-            label: "Tutorial",
+            label: "Content",
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
             href: "https://github.com/Daim-Nickel-Penny/brain",
-            label: "GitHub",
             position: "right",
+            className: "header-github-link",
+            "aria-label": "GitHub repository",
           },
         ],
       },
@@ -114,6 +115,15 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      metadata: [
+        { name: "keywords", content: "second brain,docs" },
+        {
+          name: "description",
+          content:
+            "My Second Brain is a place where you can keep track of your thoughts, ideas, and notes.",
+        },
+        { name: "author", content: "daim" },
+      ],
     }),
 };
 

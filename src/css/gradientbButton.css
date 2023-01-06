@@ -1,0 +1,61 @@
+.gd-button {
+  padding: 0 1rem;
+  position: relative;
+  display: inline-flex;
+  border: none;
+  min-width: 220px;
+  min-height: 52px;
+  color: #ff0080;
+  font-weight: 900;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1.1rem;
+}
+
+.gd-button-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: wheat;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gd-button-background {
+  position: absolute;
+  top: 8px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  border-radius: 4px;
+  background: linear-gradient(-90deg, #007cf0, #00dfd8, #ff0080, #007cf0);
+  background-size: 400% 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  animation: backgroundAnimation 8s ease-in-out infinite;
+}
+
+@keyframes backgroundAnimation {
+  50% {
+    background-position: 140% 50%;
+    transform: skew(-2deg);
+  }
+}
+
+.gd-button-background:after {
+  content: "";
+  position: absolute;
+  background-size: inherit;
+  background-image: inherit;
+  -webkit-animation: inherit;
+  animation: inherit;
+  left: 0;
+  right: 0;
+  top: 12px;
+  height: 100%;
+  filter: blur(0.5rem);
+}

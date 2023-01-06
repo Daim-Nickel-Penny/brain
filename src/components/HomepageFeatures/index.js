@@ -8,8 +8,8 @@ const FeatureList = [
     Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
     description: (
       <>
-        Looking for some cool stuff to read about?
-        <br /> You've come to the right place! <br /> Happy reading, cool cat!
+        Looking for some cool stuff to read about? You've come to the right
+        place! <br /> Happy reading, cool cat!
       </>
     ),
   },
