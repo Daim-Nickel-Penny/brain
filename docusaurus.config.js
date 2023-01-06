@@ -114,6 +114,15 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      metadata: [
+        { name: "keywords", content: "second brain,docs" },
+        {
+          name: "description",
+          content:
+            "My Second Brain is a place where you can keep track of your thoughts, ideas, and notes.",
+        },
+        { name: "author", content: "daim" },
+      ],
     }),
 };
 
