@@ -1,0 +1,44 @@
+{
+  "short_name": "Brain",
+  "name": "Brain",
+  "icons": [
+    {
+      "src": "/img/logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/img/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "id": "/docs/intro",
+  "start_url": "/docs/intro",
+  "background_color": "#3367D6",
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "#3367D6",
+  "shortcuts": [
+    {
+      "name": "JavaScript",
+      "short_name": "JS",
+      "description": "View Topics about JS",
+      "url": "/docs/javascript/Easy%20Promise",
+      "icons": [{ "src": "./img/js.logo", "sizes": "256x256" }]
+    },
+    {
+      "name": "Universe",
+      "short_name": "Universe",
+      "description": "View universe information in easy way",
+      "url": "/docs/universe/blackholes-are-fat",
+      "icons": [{ "src": "/images/universe.png", "sizes": "Universe" }]
+    }
+  ],
+  "description": "My Second Brain is a place where you can keep track of your thoughts, ideas, and notes"
+}
