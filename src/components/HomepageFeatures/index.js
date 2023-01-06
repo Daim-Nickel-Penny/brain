@@ -20,7 +20,7 @@ const FeatureList = [
       <>
         Looking for a quick hit of knowledge? I've covered with our collection
         of bite-sized notes on all sorts of interesting topics! Go to{" "}
-        <code>docs</code>
+        <code>content</code>
       </>
     ),
   },

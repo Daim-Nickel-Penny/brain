@@ -28,11 +28,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/Daim-Nickel-Penny/brain",
+          editUrl: "https://github.com/Daim-Nickel-Penny/brain/blob/main/",
         },
         blog: {
           showReadingTime: true,
-          editUrl: "https://github.com/Daim-Nickel-Penny/brain",
+          editUrl: "https://github.com/Daim-Nickel-Penny/brain/blob/main/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -125,6 +125,15 @@ const config = {
         { name: "author", content: "daim" },
       ],
     }),
+  plugins: [
+    [
+      "@docusaurus/plugin-google-gtag",
+      {
+        trackingID: "G-1MYDQ47LC6",
+        anonymizeIP: false,
+      },
+    ],
+  ],
 };
 
 module.exports = config;
