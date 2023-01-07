@@ -3,12 +3,12 @@
   position: relative;
   display: inline-flex;
   border: none;
-  min-width: 220px;
-  min-height: 52px;
-  color: #ff0080;
+  min-width: 280px;
+  min-height: 82px;
   font-weight: 900;
   font-family: "Noto Sans", sans-serif;
   font-size: 1.1rem;
+  border-radius: 4px;
 }
 
 .gd-button-text {
@@ -18,10 +18,16 @@
   bottom: 0;
   left: 0;
   background: wheat;
+  color: #ff0080;
   border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.gd-button-text:hover {
+  background: rgb(177, 160, 129);
+  color: #ff2391;
 }
 
 .gd-button-background {

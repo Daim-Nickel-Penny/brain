@@ -30,14 +30,14 @@
       "short_name": "JS",
       "description": "View Topics about JS",
       "url": "/docs/javascript/Easy%20Promise",
-      "icons": [{ "src": "./img/js.logo", "sizes": "256x256" }]
+      "icons": [{ "src": "/img/js.logo", "sizes": "256x256" }]
     },
     {
       "name": "Universe",
       "short_name": "Universe",
       "description": "View universe information in easy way",
       "url": "/docs/universe/blackholes-are-fat",
-      "icons": [{ "src": "/images/universe.png", "sizes": "Universe" }]
+      "icons": [{ "src": "/img/universe.png", "sizes": "256x256" }]
     }
   ],
   "description": "My Second Brain is a place where you can keep track of your thoughts, ideas, and notes"
