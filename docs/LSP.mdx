@@ -1,0 +1,79 @@
+---
+title: LSP - Language Server Protocol
+id: lsp
+slug: /lsp
+---
+
+### LSP - Language Server Protocol
+
+Hey folks, have you ever heard of the **Language Server Protocol (LSP)**? If you're a developer,
+it's definitely something you should know about! LSP is a communication protocol that allows text
+editors and IDEs to communicate with language servers and provide advanced language-specific
+features and functionality to developers.
+
+### What is LSP?
+
+So, what exactly is LSP and how does it work? In a nutshell, LSP is a way of enabling text editors
+and IDEs to provide advanced code analysis and feedback to developers. It's like having a personal
+coding assistant that can help you catch errors, suggest improvements, and provide other useful
+information about your code.
+
+### How does LSP work?
+
+For example, let's say you're working on a Java project in your favorite text editor. With LSP, your
+editor can communicate with a Java language server that analyzes your code and provides helpful
+suggestions, like code completion or error highlighting. This can save you time and help you write
+better code!
+
+### Why use LSP?
+
+But LSP isn't just limited to Java - it works with many different programming languages, including
+Python, TypeScript, and more. And because it's a standardized protocol, it can be used with many
+different text editors and IDEs, so you can use the tools you're most comfortable with.
+
+In summary, LSP is a powerful tool that can make programming easier and more efficient by providing
+advanced language-specific features and functionality to text editors and IDEs. Whether you're a
+seasoned developer or just starting out, LSP is definitely something worth checking out!
+
+### Actionnnnn
+
+```java
+import java.util.List;
+
+public class HelloWorldLanguageServer {
+    public List<String> codeCompletion(String fileName, String fileContent, int line, int character) {
+        // Parse the code in the specified file and create an Abstract Syntax Tree (AST)
+        // Analyze the AST to identify the context of the code being edited
+        // Use the context to generate a list of code completion suggestions
+        // Return the list of suggestions to the text editor or IDE
+        return List.of("System.out.println(\"Hello, World!\");");
+    }
+}
+```
+
+Imagine you're writing a Java program in your favorite text editor or IDE, and you want to use the
+**Language Server Protocol (LSP)** to get code completion suggestions. You can create a Java class,
+let's call it `HelloWorldLanguageServer`, that provides a method called `codeCompletion`. This
+method takes as input a file name, file content, line number, and character position within the
+file.
+
+When you call the `codeCompletion` method, it does some magic behind the scenes. First, it parses
+the code in the specified file and creates an **Abstract Syntax Tree (AST)**. An AST is basically a
+fancy data structure that represents the structure of the code in a way that a computer can
+understand.
+
+Next, the method analyzes the AST to identify the context of the code being edited. For example, if
+you're typing in a for loop, the method might identify that you're iterating over an array of
+integers.
+
+Based on this context, the method generates a list of code completion suggestions. For example, it
+might suggest completing the for loop statement, or suggest a method to use on the integer array.
+
+In this example, the method is very simple, and just returns a list of suggestions that includes a
+`System.out.println` statement that prints the message "Hello, World!". This is just an example, but
+in a real-world scenario, the suggestions returned by the `codeCompletion` method would be more
+sophisticated and based on a more comprehensive analysis of the code.
+
+Overall, using LSP and a language server like the one provided by the `HelloWorldLanguageServer`
+class can help you write code faster and more efficiently, by providing intelligent code completion
+suggestions based on the context of your code.
