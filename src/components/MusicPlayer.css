@@ -1,0 +1,107 @@
+.audio-player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 8px;
+  border: none;
+  background-color: #f5f5f5;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.audiobtn {
+  background-color: #f5f5f5;
+  color: #777;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.audiobtn::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 10px;
+  margin-left: -2px;
+  vertical-align: middle;
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent #777;
+}
+
+.audiobtn.play::before {
+  border-width: 0 0 0 15px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.audiobtn.pause::before {
+  width: 4px;
+  height: 12px;
+  margin-left: -6px;
+  margin-right: -6px;
+  background-color: #777;
+  border-radius: 2px;
+}
+
+.audiobtn:hover {
+  color: #555;
+  background-color: #eee;
+}
+
+.audiobtn:focus {
+  outline: none;
+}
+
+.audiobtn:active {
+  background-color: #ccc;
+  color: #222;
+}
+
+.audio-player:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.audiobtn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 6px 10px 6px;
+  border-color: transparent transparent #fff transparent;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.audiobtn.play::after {
+  opacity: 1;
+}
+
+.audiobtn.pause::after {
+  opacity: 0;
+}
+
+.audiobtn.play:active::before,
+.audiobtn.play:focus::before,
+.audiobtn.play:hover::before {
+  border-color: transparent transparent transparent #555;
+}
+
+.audiobtn.pause:active::before,
+.audiobtn.pause:focus::before,
+.audiobtn.pause:hover::before {
+  background-color: #555;
+}
