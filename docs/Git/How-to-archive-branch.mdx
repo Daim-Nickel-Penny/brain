@@ -1,0 +1,19 @@
+---
+title: Archive Git Branch
+id: archive-git-branches
+slug: /archive-git-branches
+---
+
+If you want to archive a branch in Git follow below steps:
+
+1. Check out the branch you want to archive: `git checkout <branch-to-archive>`
+2. Create a new branch from the branch you want to archive:
+   `git checkout -b archive/<branch-to-archive>`
+3. Push the new branch to the remote: `git push origin archive/<branch-to-archive>`
+
+4. Delete the branch you want to archive: `git branch -d <branch-to-archive>`
+5. Push the deletion to the remote: `git push origin :<branch-to-archive>`
+
+6. Delete the branch on the remote: `git push origin --delete <branch-to-archive>`
+
+7. Verify that the branch is deleted: `git branch -a`

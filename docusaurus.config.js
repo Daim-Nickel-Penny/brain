@@ -114,6 +114,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages:["java"]
       },
       metadata: [
         { name: "keywords", content: "second brain,docs" },
