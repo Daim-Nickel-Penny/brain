@@ -1,0 +1,64 @@
+---
+title: Backend-Deployment
+id: backend-deployment-journey
+slug: /development-and-cloud/backend-deployment-journey
+---
+
+# My Wild Ride through Backend Deployment: Nest.js on AWS
+
+Hello, fellow developers! Today, I'm going to share my recent endeavor deploying a Nest.js backend
+on AWS. It was quite a journey, filled with both unexpected hurdles and valuable lessons. I hope
+that by sharing my experience, it might help you on your deployment journeys.
+
+## My Initial Try with Elastic Beanstalk
+
+Starting off, I decided to go with AWS Elastic Beanstalk. If you're unfamiliar with it, Elastic
+Beanstalk is an AWS service that automatically handles deployment details such as capacity
+provisioning, load balancing, and automatic scaling. It seemed like the perfect choice, but I ran
+into a major roadblock. My application uses Prisma,an ORM, and this led me straight into the
+infamous "Prisma client failed to generate" error. This error usually happens when Prisma Client is
+unable to execute the `prisma generate` command during the postinstall phase, which was the case for
+me.
+
+I decided to hit the books and find a solution, and I found that Prisma has a guide to solve this
+issue. However, I found that the solutions provided in the guide didn't quite work for me. After
+what felt like an eternity wrestling with Elastic Beanstalk and Prisma, I decided to look for a
+different solution.
+
+## Navigating CodePipeline and ECB
+
+Feeling somewhat defeated but determined, I moved onto AWS CodePipeline and ECB (Elastic Container
+Service). These services provide continuous integration and continuous delivery (CI/CD) and
+container orchestration, respectively. However, the setup of these services felt like solving a
+complex jigsaw puzzle without the picture on the box. As a newcomer to this space, I found it
+difficult to connect all the pieces. Therefore, I decided to seek an alternative.
+
+## Discovering Docker
+
+At this point, I stumbled upon Docker. Docker is a brilliant tool that allows developers to package
+applications with all the parts it needs, like libraries and other dependencies, and ship it all out
+as one package. This feature, known as containerization, ensures that the application runs the same
+regardless of the environment it's running on.
+
+What was fantastic about Docker was that it provided me with the flexibility to move from
+development to production without worrying about environment setup. The lightweight nature of Docker
+containers means I could deploy multiple instances of my application on the same machine, saving on
+costs without compromising on performance.
+
+## The Detour: Google Cloud Platform's Cloud Run
+
+With my newly Dockerized app, I felt a new sense of optimism and decided to try Google Cloud
+Platform's Cloud Run. Cloud Run is designed to run stateless containers, which seemed like a perfect
+match for my Dockerized application. However, the process to update my application on Cloud Run was
+far from straightforward. I had to navigate through various services, and updating the code became a
+long, winding journey. So, I thought it was time to return to AWS, where I'd started.
+
+## The Breakthrough: AWS EC2
+
+I finally decided to give AWS EC2 a shot. EC2 stands for Elastic Compute Cloud, and it provides
+secure and resizable computing capacity in the cloud. It's designed to make web-scale cloud
+computing more approachable, and for someone still finding their feet in this space, it was exactly
+what I needed.
+
+Deploying my application on EC2 felt like reaching the finish line. I won't lie, the initial setup
+was a bit of a learning curve. There were decisions to be made about
